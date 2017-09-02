@@ -2,6 +2,7 @@
 
 import UIKit
 
+
 enum Profile : String
 {
     case BUSINESS, SOFTWARE, TECHNOLOGY
@@ -12,13 +13,13 @@ enum Function : String
     case JUNIOR_DOCENT, DOCENT_1, DOCENT_2, INTERNSHIP_COORDINATOR, TEAM_LEADER, DIRECTOR
 }
 
-public class Person
+ class Person
 {
     var firstName: String
     var lastName: String
     var pcn: Int
 
-    public init(firstName: String, lastName: String, pcn: Int)
+    init(firstName: String, lastName: String, pcn: Int)
     {
         
         self.firstName = firstName
@@ -29,40 +30,50 @@ public class Person
 }
 
 
-public class Student : Person
+ class Student : Person
 {
-    var ec: Int
     var studentNr: Int
     var profile: Profile
  
-    public init(firstName: <#T##String#>, lastName: <#T##String#>, pcn: <#T##Int#>, ec: Int, studentNr: Int, profile: Profile)
+     init(firstName: String, lastName: String, pcn: Int, studentNr: Int, profile: Profile)
     {
-        super.init(firstName: firstName, lastName: lastName, pcn: pcn)
-        self.ec = ec
+        
         self.studentNr = studentNr
         self.profile = profile
+        super.init(firstName: firstName, lastName: lastName, pcn: pcn)
+        
         
     }
 }
 
-public class Lecturer : Person
+
+
+class Lecturer : Person
 {
     var salary : Double
     var function: Function
     
     
-    public init(firstName: <#T##String#>, lastName: <#T##String#>, pcn: <#T##Int#>, salary: Double, function: Function)
+     init(firstName: String, lastName: String, pcn: Int, salary: Double, function: Function)
     {
-        super.init(firstName: firstName, lastName: lastName, pcn: pcn)
+        
         self.salary = salary
         self.function = function
+        super.init(firstName: firstName, lastName: lastName, pcn: pcn)
+        
     }
 }
 
-public class Group
+ class Group
 {
     var studentList = [Student]()
     var lecturerList = [Lecturer]()
+    
+    init()
+    {
+        
+    }
+    
     func AddStudentToTheGroup(newStudent: Student)
     {
         studentList.append(newStudent)
@@ -75,15 +86,13 @@ public class Group
     
 }
 
-public class Registration
-{
-    var isRegistered: Bool
-    
-    public init()
-    {
-        
-    }
-}
+var student1 = Student(firstName: "Aleksei", lastName: "M", pcn: 360992, studentNr: 3008908, profile: Profile.SOFTWARE)
+
+var group = Group()
+
+group.AddStudentToTheGroup(newStudent: student1)
+
+
 
 //country ec st num
 //salary func
