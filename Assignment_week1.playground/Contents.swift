@@ -83,17 +83,34 @@ class Lecturer : Person
     {
         lecturerList.append(newLecturer)
     }
+    func GetNrOfAllStudents() -> Int
+    {
+        return self.studentList.count
+    }
+    func GetNrOfAllLecrurers() -> Int
+    {
+        return self.lecturerList.count
+    }
+
+    
+    
+}
+
+class Registration
+{
     
 }
 
 var student1 = Student(firstName: "Aleksei", lastName: "M", pcn: 360992, studentNr: 3008908, profile: Profile.SOFTWARE)
+var student2 = Student(firstName: "Bob", lastName: "Marley", pcn: 345934, studentNr: 532123, profile: Profile.BUSINESS)
+var lecturer1 = Lecturer(firstName: "John", lastName: "Lennon", pcn: 123456, salary: 750.00, function: Function.INTERNSHIP_COORDINATOR)
 
 var group = Group()
 
 group.AddStudentToTheGroup(newStudent: student1)
+group.AddStudentToTheGroup(newStudent: student2)
+group.AddLecturerToTheGroup(newLecturer: lecturer1)
+
+print(group.GetNrOfAllStudents() + group.GetNrOfAllLecrurers())
 
 
-
-//country ec st num
-//salary func
-  //  name pcn age yearsatFontys
