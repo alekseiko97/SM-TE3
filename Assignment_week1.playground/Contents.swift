@@ -1,4 +1,3 @@
-//: Playground - noun: a place where people can play
 
 import UIKit
 
@@ -30,7 +29,7 @@ enum Function : String
 }
 
 
- class Student : Person
+ class Student : Person, CustomStringConvertible // inherits from class Person and auto-describing object class
 {
     var studentNr: Int
     var profile: Profile
@@ -44,11 +43,17 @@ enum Function : String
         
         
     }
+    
+    var description: String
+    {
+        return "First name: \(firstName), last name: \(lastName), pcn: \(pcn), student number: \(studentNr), profile: \(profile)"
+    }
+    
 }
 
 
 
-class Lecturer : Person
+class Lecturer : Person, CustomStringConvertible //inherits from class Person and auto-describing object class
 {
     var salary : Double
     var function: Function
@@ -62,6 +67,11 @@ class Lecturer : Person
         super.init(firstName: firstName, lastName: lastName, pcn: pcn)
         
     }
+    
+    var description: String
+    {
+        return "First name: \(firstName), last name: \(lastName), pcn: \(pcn), salary: \(salary), function: \(function)"
+    }
 }
 
 public class Group
@@ -74,15 +84,15 @@ public class Group
     {
         self.groupName = groupName
         self.lecturer = lecuturer
-        self.studentList = []
+        self.studentList = [] // creates a new array of student objects
     }
     
-    func GetNrOfAllStudents() -> Int
+    func GetNrOfAllStudents() -> Int //returns the number of students in the group
     {
         return self.studentList.count
     }
     
-    func GetStudent(studentNr: Int) -> Student?
+    func GetStudent(studentNr: Int) -> Student? // gets student by his/her student number
     {
         for st in studentList
         {
@@ -94,45 +104,31 @@ public class Group
         return nil
     }
     
-    func AddStudentToTheGroup(newStudent: Student)
+    func AddStudentToTheGroup(newStudent: Student) // adds new student to the group
     {
         for st in studentList
         {
             if newStudent.studentNr == st.studentNr
             {
                  print("This student already exists in this group")
-                 studentList.removeLast() // Removes the last added student that was already in the group
-                
+                return
             }
             
         }
         studentList.append(newStudent)
     }
     
-    /* func AddStudent(firstName: String, lastName: String, pcn: Int, studentNr: Int, profile: Profile)
-    {
-        if (GetStudent(studentNr: studentNr) == nil)
-        {
-            let s = Student(firstName: firstName, lastName: lastName, pcn: pcn, studentNr: studentNr, profile: profile)
-            studentList.append(s)
-        }
-        else
-        {
-            print("Student with \(studentNr) already exists")
-        }
-    } */
-    
-    func AddNewLecturerToTheGroup(newLecturer: Lecturer)
+    func AddNewLecturerToTheGroup(newLecturer: Lecturer) // replaces the teacher in the group
     {
         self.lecturer = newLecturer
     }
-    func RemoveLecturerFromTheGroup()
+    func RemoveLecturerFromTheGroup() // removes the teacher from the group
     {
         self.lecturer = nil
         print("No teacher is assigned to the group")
     }
     
-    func RemoveStudentFromTheGroup(student: Student)
+    func RemoveStudentFromTheGroup(student: Student) // removes the student from the group
     {
         var counter = 0
         for st in studentList
@@ -153,32 +149,44 @@ public class Group
 class Registration
 {
     var regStudents : [Student]
+    var group: [Group]
     init()
     {
         self.regStudents = []
+        self.group = []
     }
     func RegisterStudent(student: Student)
     {
-        
+        for stnd in regStudents
+        {
+            if stnd.studentNr == student.studentNr
+            {
+                print("This student is already registered")
+                return
+            }
+        }
+        regStudents.append(student)
     }
 }
 
 
-var lecturer1 = Lecturer(firstName: "John", lastName: "Lennon", pcn: 123456, salary: 750.00, function: Function.INTERNSHIP_COORDINATOR)
+var lecturer1 = Lecturer(firstName: "John", lastName: "Lennon", pcn: 123456, salary: 750.00, function: .INTERNSHIP_COORDINATOR)
 var group1 = Group(groupName: "A", lecuturer: lecturer1)
-var lecturer2 = Lecturer(firstName: "Donald", lastName: "Trump", pcn: 234123, salary: 10000.00, function: Function.DIRECTOR)
-var student1 = Student(firstName: "Aleksei", lastName: "M", pcn: 360992, studentNr: 3008908, profile: Profile.SOFTWARE)
-var student2 = Student(firstName: "Bob", lastName: "Marley", pcn: 345934, studentNr: 532123, profile: Profile.BUSINESS)
+var lecturer2 = Lecturer(firstName: "Donald", lastName: "Trump", pcn: 234123, salary: 10000.00, function: .DIRECTOR)
+var student1 = Student(firstName: "Aleksei", lastName: "M", pcn: 360992, studentNr: 3008908, profile: .SOFTWARE)
+var student2 = Student(firstName: "Bob", lastName: "Marley", pcn: 345934, studentNr: 532123, profile: .BUSINESS)
 
+group1.AddStudentToTheGroup(newStudent: student1)
 group1.AddStudentToTheGroup(newStudent: student1)
 group1.AddStudentToTheGroup(newStudent: student2)
 group1.RemoveStudentFromTheGroup(student: student2)
 print(group1.GetNrOfAllStudents())
-print(group1.lecturer?.firstName)
+print(group1.lecturer)
 group1.AddNewLecturerToTheGroup(newLecturer: lecturer2)
-print(group1.lecturer?.firstName)
+print(group1.lecturer)
 group1.RemoveLecturerFromTheGroup()
-print(group1.lecturer?.firstName)
+print(group1.lecturer)
+print(student1)
 
 
 
