@@ -9,10 +9,10 @@ enum Profile : String
 
 enum Function : String
 {
-    case JUNIOR_DOCENT, DOCENT_1, DOCENT_2, INTERNSHIP_COORDINATOR, TEAM_LEADER, DIRECTOR
+    case JUNIOR_DOCENT, DOCENT_1, DOCENT_2, INTERNSHIP_COORDINATOR, DIRECTOR
 }
 
- class Person
+ class Person // base class
 {
     var firstName: String
     var lastName: String
@@ -87,7 +87,7 @@ public class Group
         self.studentList = [] // creates a new array of student objects
     }
     
-    func GetNrOfAllStudents() -> Int //returns the number of students in the group
+    func GetNrOfAllStudents() -> Int // returns the number of students in the group
     {
         return self.studentList.count
     }
@@ -149,13 +149,13 @@ public class Group
 class Registration
 {
     var regStudents : [Student]
-    var group: [Group]
-    init()
+    var group: Group
+    init(group: Group)
     {
         self.regStudents = []
-        self.group = []
+        self.group = group
     }
-    func RegisterStudent(student: Student)
+    func RegisterStudent(student: Student) // registers student in the system and adds it to the group
     {
         for stnd in regStudents
         {
@@ -166,21 +166,24 @@ class Registration
             }
         }
         regStudents.append(student)
+        group.AddStudentToTheGroup(newStudent: student)
     }
 }
-
 
 var lecturer1 = Lecturer(firstName: "John", lastName: "Lennon", pcn: 123456, salary: 750.00, function: .INTERNSHIP_COORDINATOR)
 var group1 = Group(groupName: "A", lecuturer: lecturer1)
 var lecturer2 = Lecturer(firstName: "Donald", lastName: "Trump", pcn: 234123, salary: 10000.00, function: .DIRECTOR)
 var student1 = Student(firstName: "Aleksei", lastName: "M", pcn: 360992, studentNr: 3008908, profile: .SOFTWARE)
 var student2 = Student(firstName: "Bob", lastName: "Marley", pcn: 345934, studentNr: 532123, profile: .BUSINESS)
+var student3 = Student(firstName: "Alan", lastName: "Smith", pcn: 127545, studentNr: 382999, profile: .TECHNOLOGY)
+var registration = Registration(group: group1)
+registration.RegisterStudent(student: student3)
 
 group1.AddStudentToTheGroup(newStudent: student1)
-group1.AddStudentToTheGroup(newStudent: student1)
+group1.AddStudentToTheGroup(newStudent: student1) // try to add the same student twice in the same group
 group1.AddStudentToTheGroup(newStudent: student2)
 group1.RemoveStudentFromTheGroup(student: student2)
-print(group1.GetNrOfAllStudents())
+print(group1.GetNrOfAllStudents()) // displays current number of students in the group
 print(group1.lecturer)
 group1.AddNewLecturerToTheGroup(newLecturer: lecturer2)
 print(group1.lecturer)
