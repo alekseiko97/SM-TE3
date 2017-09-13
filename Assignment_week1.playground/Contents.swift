@@ -184,9 +184,9 @@ group1.AddStudentToTheGroup(newStudent: student1) // try to add the same student
 group1.AddStudentToTheGroup(newStudent: student2)
 group1.RemoveStudentFromTheGroup(student: student2)
 print(group1.GetNrOfAllStudents()) // displays current number of students in the group
-print(group1.lecturer)
+print(group1.lecturer!)
 group1.AddNewLecturerToTheGroup(newLecturer: lecturer2)
-print(group1.lecturer)
+print(group1.lecturer!)
 group1.RemoveLecturerFromTheGroup()
 print(group1.lecturer)
 print(student1)
