@@ -26,7 +26,7 @@
                   moduleName = "PirateApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fhict/Documents/GitHub/SM-TE3/PirateApp/PirateApp/Pirate.swift"
-                  timestampString = "527695186.437875"
+                  timestampString = "527710323.588817"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -41,7 +41,7 @@
                   moduleName = "PirateApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fhict/Documents/GitHub/SM-TE3/PirateApp/PirateApp/Pirate.swift"
-                  timestampString = "527695186.448698"
+                  timestampString = "527710323.600977"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -58,13 +58,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PirateApp/TableViewController.swift"
-            timestampString = "527694215.596349"
+            timestampString = "527710321.704102"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "tableView(_:didSelectRowAt:)"
-            landmarkType = "7">
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "TableViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -73,14 +73,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PirateApp/TableViewController.swift"
-            timestampString = "527694215.596349"
+            filePath = "PirateApp/ViewController.swift"
+            timestampString = "527709571.820447"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "TableViewController"
-            landmarkType = "3">
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -11,10 +11,6 @@ import UIKit
 class TableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var lifeLabel: UILabel!
-    @IBOutlet weak var countryLabel: UILabel!
-    
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()

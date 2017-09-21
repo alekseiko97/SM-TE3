@@ -10,14 +10,28 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var commentText: String?
+    var lifeText: String?
+    var countryText: String?
+    
+    // MARK: -  IBOutlets
     @IBOutlet weak var commentTextView: UITextView!
+    @IBOutlet weak var lifeLabel: UILabel!
+    @IBOutlet weak var countryLabel: UILabel!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+            commentTextView.text = commentText
+            lifeLabel.text = "Life: " + lifeText!
+            countryLabel.text = "Country: " + countryText!
+    }
     
-    var commentPirate = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        commentTextView.text = commentPirate
+        
+        
         
     }
     

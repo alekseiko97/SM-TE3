@@ -10,17 +10,24 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
+    // MARK: - IBOutlets
+    
+    
     var pirates = [Pirate]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         parseData()
+        tableView.dataSource = self
+        tableView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
+    
+  
 
     // MARK: - Table view data source
     
@@ -92,21 +99,24 @@ class TableViewController: UITableViewController {
         }
         let pirate = pirates[indexPath.row]
         cell.nameLabel?.text = pirate.name
-        cell.lifeLabel?.text = pirate.life
-        cell.countryLabel?.text = pirate.countryOfOrigin
         return cell;
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        performSegue(withIdentifier: "mySegue", sender: pirates[indexPath.row].comments)
-         
-    }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "mySegue" {
+            if let indexPath = tableView.indexPathForSelectedRow
+            {
+                let guest = segue.destination as! ViewController
+                guest.commentText = pirates[indexPath.row].comments
+                guest.lifeText = pirates[indexPath.row].life
+                guest.countryText  = pirates[indexPath.row].countryOfOrigin
+            }
+        }
         
-        let guest = segue.destination as! ViewController
-        guest.commentPirate = sender as! String
+        
+        
     }
     
 
