@@ -12,11 +12,13 @@ class ViewController: UIViewController {
     
     var commentText: String?
     var lifeText: String?
+    var yearsActiveText: String?
     var countryText: String?
     
     // MARK: -  IBOutlets
     @IBOutlet weak var commentTextView: UITextView!
     @IBOutlet weak var lifeLabel: UILabel!
+    @IBOutlet weak var yearsActiveLabel: UILabel!
     @IBOutlet weak var countryLabel: UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
@@ -24,6 +26,7 @@ class ViewController: UIViewController {
         
             commentTextView.text = commentText
             lifeLabel.text = "Life: " + lifeText!
+            yearsActiveLabel.text = "Years active: " + yearsActiveText!
             countryLabel.text = "Country: " + countryText!
     }
     

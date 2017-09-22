@@ -61,10 +61,11 @@ class TableViewController: UITableViewController {
                         let eachPirate = pirate as! [String: Any]
                         let name = eachPirate["name"] as! String
                         let life = eachPirate["life"] as! String
+                        let yearsActive = eachPirate["years_active"] as! String
                         let countryOfOrigin = eachPirate["country_of_origin"] as! String
                         let comments = eachPirate["comments"] as! String
                         
-                        self.pirates.append(Pirate(name: name, life: life, countryOfOrigin: countryOfOrigin, comments: comments))
+                        self.pirates.append(Pirate(name: name, life: life, yearsActive: yearsActive, countryOfOrigin: countryOfOrigin, comments: comments))
                     }
                     self.tableView.reloadData()
                     
@@ -108,10 +109,11 @@ class TableViewController: UITableViewController {
         if segue.identifier == "mySegue" {
             if let indexPath = tableView.indexPathForSelectedRow
             {
-                let guest = segue.destination as! ViewController
-                guest.commentText = pirates[indexPath.row].comments
-                guest.lifeText = pirates[indexPath.row].life
-                guest.countryText  = pirates[indexPath.row].countryOfOrigin
+                let destVC = segue.destination as! ViewController
+                destVC.commentText = pirates[indexPath.row].comments
+                destVC.lifeText = pirates[indexPath.row].life
+                destVC.yearsActiveText = pirates[indexPath.row].yearsActive
+                destVC.countryText  = pirates[indexPath.row].countryOfOrigin
             }
         }
         

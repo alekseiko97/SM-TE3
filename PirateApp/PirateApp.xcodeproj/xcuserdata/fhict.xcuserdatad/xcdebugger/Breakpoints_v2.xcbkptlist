@@ -6,7 +6,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PirateApp/Pirate.swift"
@@ -19,14 +19,14 @@
             landmarkType = "3">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "PirateApp.Pirate.__deallocating_deinit"
                   moduleName = "PirateApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fhict/Documents/GitHub/SM-TE3/PirateApp/PirateApp/Pirate.swift"
-                  timestampString = "527715771.346396"
+                  timestampString = "527760338.368545"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -34,14 +34,14 @@
                   offsetFromSymbolStart = "4">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "PirateApp.Pirate.deinit"
                   moduleName = "PirateApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/fhict/Documents/GitHub/SM-TE3/PirateApp/PirateApp/Pirate.swift"
-                  timestampString = "527715771.360879"
+                  timestampString = "527760338.381559"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PirateApp/TableViewController.swift"
-            timestampString = "527710321.704102"
+            timestampString = "527762172.244858"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "TableViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PirateApp/ViewController.swift"
-            timestampString = "527709571.820447"
+            timestampString = "527762172.244858"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
